@@ -1,8 +1,7 @@
-import React from 'react'
-import axios  from 'axios';
-import {useEffect,useState}  from 'react';
+import React, {useState,useEffect}  from 'react';
 import profile from './download.png';
 import { Link } from 'react-router-dom';
+import axios  from 'axios';
 
 
 export default function Movies() {

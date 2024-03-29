@@ -17,7 +17,8 @@ import About from './About';
 import {jwtDecode} from 'jwt-decode';
 import { useState, useEffect } from 'react';
 import Movies from './Movies';
-
+import MoviesContextProvider from './Store';
+// import MoviesContextProvider from './Store.js';
 
   
 
@@ -54,6 +55,8 @@ import Movies from './Movies';
     }
 
   return (
+    <MoviesContextProvider>
+
     <div >
      <Navbar logOut={logOut} tokenData={tokenData}/>
      <Routes>
@@ -75,6 +78,8 @@ import Movies from './Movies';
 
      </Routes>
     </div>
+    </MoviesContextProvider>
+
   );
 }
 

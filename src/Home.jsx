@@ -1,23 +1,11 @@
-import React from 'react'
-import axios  from 'axios';
-import {useEffect,useState}  from 'react';
+import React,{useContext}  from 'react';
 import profile from './download.png';
 import { Link } from 'react-router-dom';
+import {contextMovies} from './Store.js';
+
 export default function Home() {
 
-   const [trendingMovies, setTrendingMovies] = useState([]) ;
-
-
-   async function getTrendingMovies(){
-        let responce= await axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=c5aa4f1ccdf671108f7885cabe258e8b`)
-         setTrendingMovies(responce.data.results.splice(0,10))
-        console.log(trendingMovies)
-
-    }
-    useEffect(() => {
-        getTrendingMovies();
-
-    }, [])
+ let {trendingMovies} = useContext(contextMovies);
     return (
         <>
         
